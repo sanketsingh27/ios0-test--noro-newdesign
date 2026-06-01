@@ -225,7 +225,8 @@ jobs:
 
             echo "Running: $BUILD_CMD"
             if ! eval "$BUILD_CMD" 2>&1 | tee xcodebuild.log; then
-              echo "::error file=.github/workflows/ios-build.yml::xcodebuild failed for React Native/Expo path"
+              ERROR_SUMMARY=$(grep -E "error:|fatal error:|BUILD FAILED|No such|does not exist|cannot|failed" xcodebuild.log | tail -n 20 | tr '\n' ' ' | sed 's/%/%25/g; s/\r/%0D/g; s/\n/%0A/g')
+              echo "::error file=.github/workflows/ios-build.yml,title=xcodebuild failed::$ERROR_SUMMARY"
               tail -n 120 xcodebuild.log
               exit 1
             fi
@@ -261,7 +262,8 @@ jobs:
 
             echo "Running: $BUILD_CMD"
             if ! eval "$BUILD_CMD" 2>&1 | tee xcodebuild.log; then
-              echo "::error file=.github/workflows/ios-build.yml::xcodebuild failed for native path"
+              ERROR_SUMMARY=$(grep -E "error:|fatal error:|BUILD FAILED|No such|does not exist|cannot|failed" xcodebuild.log | tail -n 20 | tr '\n' ' ' | sed 's/%/%25/g; s/\r/%0D/g; s/\n/%0A/g')
+              echo "::error file=.github/workflows/ios-build.yml,title=xcodebuild failed::$ERROR_SUMMARY"
               tail -n 120 xcodebuild.log
               exit 1
             fi
