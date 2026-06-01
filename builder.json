@@ -1,0 +1,14 @@
+{
+  "project": "redesign_noro_ios",
+  "platform": "ios",
+  "github": {
+    "owner": "sanketsingh27",
+    "repo": "ios0-test--noro-newdesign"
+  },
+  "ios": {},
+  "flutter": {
+    "watch": {}
+  },
+  "reactNative": {},
+  "mobai": {}
+}
