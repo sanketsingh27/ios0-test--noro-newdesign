@@ -5,7 +5,10 @@
     "owner": "sanketsingh27",
     "repo": "ios0-test--noro-newdesign"
   },
-  "ios": {},
+  "ios": {
+    "path": "App",
+    "scheme": "BlankNativeApp"
+  },
   "flutter": {
     "watch": {}
   },

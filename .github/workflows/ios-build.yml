@@ -221,10 +221,14 @@ jobs:
             BUILD_CMD="$BUILD_CMD -derivedDataPath $DERIVED_DATA_PATH"
             BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO"
             BUILD_CMD="$BUILD_CMD COMPILER_INDEX_STORE_ENABLE=NO"
-            BUILD_CMD="$BUILD_CMD -quiet build"
+            BUILD_CMD="$BUILD_CMD build"
 
             echo "Running: $BUILD_CMD"
-            eval $BUILD_CMD
+            if ! eval "$BUILD_CMD" 2>&1 | tee xcodebuild.log; then
+              echo "::error file=.github/workflows/ios-build.yml::xcodebuild failed for React Native/Expo path"
+              tail -n 120 xcodebuild.log
+              exit 1
+            fi
           else
             BUILD_CMD="xcodebuild"
             if [ -n "$WORKSPACE" ]; then
@@ -242,7 +246,6 @@ jobs:
             BUILD_CMD="$BUILD_CMD COMPILER_INDEX_STORE_ENABLE=NO"
             BUILD_CMD="$BUILD_CMD DEBUG_INFORMATION_FORMAT=dwarf"
             BUILD_CMD="$BUILD_CMD ONLY_ACTIVE_ARCH=YES"
-            BUILD_CMD="$BUILD_CMD -quiet"
 
             # Xcode 16+ native compilation caching
             BUILD_CMD="$BUILD_CMD SWIFT_ENABLE_COMPILE_CACHE=YES"
@@ -257,8 +260,12 @@ jobs:
             fi
 
             echo "Running: $BUILD_CMD"
-            eval $BUILD_CMD
-          fi
+            if ! eval "$BUILD_CMD" 2>&1 | tee xcodebuild.log; then
+              echo "::error file=.github/workflows/ios-build.yml::xcodebuild failed for native path"
+              tail -n 120 xcodebuild.log
+              exit 1
+            fi
+            fi
 
           # Create IPA
           if [ "$USE_SIGNING" = "true" ]; then
@@ -306,6 +313,15 @@ jobs:
             rm -rf Payload
             echo "Created unsigned IPA: build/$BUILD_ID.ipa"
           fi
+
+      - name: Upload xcodebuild log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-log
+          path: App/xcodebuild.log
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4

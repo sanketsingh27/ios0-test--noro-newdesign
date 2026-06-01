@@ -1,0 +1,220 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2ECA2B6756A62BBF8CE5D90 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CB34C2E8E52D95830641A0 /* App.swift */; };
+		C28E3E31B93E32DA61B55014 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD9FE02D844B147A19438B /* ContentView.swift */; };
+		01DA254BC3335B6F38D29C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45D545F8473ACB5D4F11BAB /* Assets.xcassets */; };
+
+/* Begin PBXFileReference section */
+		F6CB34C2E8E52D95830641A0 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		EBFD9FE02D844B147A19438B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B45D545F8473ACB5D4F11BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E542901BF2B54AA1C3687FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D5BB464EFD9A40EB073DD7D /* BlankNativeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlankNativeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
+/* Begin PBXFrameworksBuildPhase section */
+		1918958AED77497B9C881F93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			displayName = Frameworks;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+/* Begin PBXGroup section */
+		B8CA7887E55CEA1D24DB40E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5BB464EFD9A40EB073DD7D /* BlankNativeApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92E2BEE294F879CC001E2224 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F6CB34C2E8E52D95830641A0 /* App.swift */,
+				EBFD9FE02D844B147A19438B /* ContentView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		45317E26C315D74C8CF33F52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B45D545F8473ACB5D4F11BAB /* Assets.xcassets */,
+				1E542901BF2B54AA1C3687FB /* Info.plist */,
+			);
+			path = .;
+			sourceTree = "<group>";
+		};
+		37E02766B5F2CF426393FAEF = {
+			isa = PBXGroup;
+			children = (
+				92E2BEE294F879CC001E2224 /* Sources */,
+				45317E26C315D74C8CF33F52 /* Resources */,
+				B8CA7887E55CEA1D24DB40E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+
+/* Begin PBXNativeTarget section */
+		030859BE29D873ECF9C25E0F /* BlankNativeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8317E2280A6C60128DCFF7B;
+			buildPhases = (
+				175E2F0277B61482FAED67F9 /* Sources */,
+				3E1ED07DB30F9B0C8FFE0295 /* Resources */,
+				1918958AED77497B9C881F93 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlankNativeApp;
+			productName = BlankNativeApp;
+			productReference = 8D5BB464EFD9A40EB073DD7D;
+			productType = "com.apple.product-type.application";
+		};
+
+/* Begin PBXProject section */
+		A594D5E80268D271B04F5A2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					030859BE29D873ECF9C25E0F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = BB62DEBD1650B665B10321E5;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37E02766B5F2CF426393FAEF;
+			productRefGroup = B8CA7887E55CEA1D24DB40E1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				030859BE29D873ECF9C25E0F,
+			);
+		};
+
+/* Begin PBXResourcesBuildPhase section */
+		3E1ED07DB30F9B0C8FFE0295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			displayName = Resources;
+			files = (
+				01DA254BC3335B6F38D29C4A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+/* Begin PBXSourcesBuildPhase section */
+		175E2F0277B61482FAED67F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			displayName = Sources;
+			files = (
+				C2ECA2B6756A62BBF8CE5D90 /* App.swift in Sources */,
+				C28E3E31B93E32DA61B55014 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+/* Begin XCBuildConfiguration section */
+		92E5E2F692A1B52E7551B935 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.BlankNativeApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		8951807053C2678DF377DE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.BlankNativeApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		8EE4CB88E8A3978C81986B36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.BlankNativeApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4A1152023ABF3617FD47878 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.BlankNativeApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+
+/* Begin XCConfigurationList section */
+		BB62DEBD1650B665B10321E5 /* Build configuration list for PBXProject */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92E5E2F692A1B52E7551B935 /* Debug */,
+				8951807053C2678DF377DE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E8317E2280A6C60128DCFF7B /* Build configuration list for PBXNativeTarget BlankNativeApp */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE4CB88E8A3978C81986B36 /* Debug */,
+				E4A1152023ABF3617FD47878 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+	};
+	rootObject = A594D5E80268D271B04F5A2C;
+}
