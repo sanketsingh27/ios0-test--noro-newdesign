@@ -297,11 +297,17 @@ jobs:
               APP_PATH=$(find "${GITHUB_WORKSPACE}/build/ios/iphoneos" -name "*.app" -type d | head -1)
             else
               # Native and React Native/Expo use DerivedData
-              APP_PATH=$(find "$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphoneos" -name "*.app" -type d | head -1)
+              APP_PATH=$(find "$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphoneos" -name "*.app" -type d | while read -r APP_CANDIDATE; do
+                if [ -f "$APP_CANDIDATE/Info.plist" ]; then
+                  echo "$APP_CANDIDATE"
+                  break
+                fi
+              done)
             fi
 
             if [ -z "$APP_PATH" ]; then
-              echo "Error: Could not find .app"
+              echo "Error: Could not find installable .app with Info.plist"
+              find "$DERIVED_DATA_PATH/Build/Products" -maxdepth 4 -name "*.app" -type d -print -exec sh -c 'echo "--- $1"; find "$1" -maxdepth 1 -type f -print' sh {} \; || true
               exit 1
             fi
             echo "Found app at: $APP_PATH"
